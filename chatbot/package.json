@@ -1,0 +1,20 @@
+{
+  "name": "faceabsen-chatbot",
+  "version": "1.0.0",
+  "description": "Chatbot AI Service for FaceAbsen using Node.js and NVIDIA NIM API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "chatbot",
+    "faceabsen",
+    "nvidia",
+    "nim"
+  ],
+  "author": "Tim Pengembang RPL",
+  "license": "ISC",
+  "dependencies": {
+    "mysql2": "^3.24.6"
+  }
+}

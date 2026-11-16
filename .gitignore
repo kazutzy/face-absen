@@ -1,0 +1,21 @@
+# Node.js dependencies
+chatbot/node_modules/
+
+# Runtime files
+node-runtime/
+
+# Chatbot temporary files
+chatbot/chatbot.log
+chatbot/chatbot.pid
+
+# Environment secrets
+.env
+.env.*
+!.env.example
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Private configuration
+config/config.php

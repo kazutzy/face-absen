@@ -1,0 +1,213 @@
+/* ==============================================================================
+   FaceAbsen Custom CSS - Mobile-First & Modern Clean Styling
+   ============================================================================== */
+
+:root {
+    /* SMK BINA WARGA Theme Palette: Emerald Green & Goldenrod Yellow */
+    --bs-primary: #0b8043;
+    --bs-primary-rgb: 11, 128, 67;
+    --bs-warning: #f59e0b;
+    --bs-warning-rgb: 245, 158, 11;
+    --bw-green-primary: #0b8043;
+    --bw-green-dark: #076333;
+    --bw-green-light: #e8f5e9;
+    --bw-yellow: #fcd34d;
+    --bw-gold: #f59e0b;
+    --bw-dark: #18181b;
+    --bs-font-sans-serif: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+    font-family: var(--bs-font-sans-serif);
+    background-color: #f8fafc;
+    color: #1e293b;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ==============================================================================
+   SMK BINA WARGA Theme Overrides
+   ============================================================================== */
+.bg-primary {
+    background-color: #0b8043 !important;
+}
+
+.text-primary {
+    color: #0b8043 !important;
+}
+
+.border-primary {
+    border-color: #0b8043 !important;
+}
+
+.bg-primary-subtle {
+    background-color: #e8f5e9 !important;
+    color: #076333 !important;
+}
+
+.btn-primary {
+    background-color: #0b8043;
+    border-color: #0b8043;
+    color: #ffffff;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    background-color: #076333 !important;
+    border-color: #076333 !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(11, 128, 67, 0.25);
+}
+
+.btn-outline-primary {
+    color: #0b8043;
+    border-color: #0b8043;
+}
+
+.btn-outline-primary:hover, .btn-outline-primary:active {
+    background-color: #0b8043;
+    border-color: #0b8043;
+    color: #ffffff;
+}
+
+/* Navbar Brand Styling */
+.navbar-dark.bg-primary {
+    background: linear-gradient(135deg, #0b8043 0%, #075a2f 100%) !important;
+    border-bottom: 3px solid #f59e0b;
+}
+
+.card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Mobile Friendly Form Inputs */
+.form-control:focus, .form-select:focus {
+    border-color: #0b8043;
+    box-shadow: 0 0 0 0.25rem rgba(11, 128, 67, 0.18);
+}
+
+.input-group-text {
+    border-color: #dee2e6;
+}
+
+/* Rounded Utilities */
+.rounded-4 {
+    border-radius: 1rem !important;
+}
+
+/* ==============================================================================
+   Camera & Face Recognition Scanner Styling
+   ============================================================================== */
+.scanner-viewport {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    height: 380px;
+    margin: 0 auto;
+    background-color: #0f172a;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+}
+
+.scanner-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scaleX(-1); /* Mirror camera for natural front selfie experience */
+}
+
+/* Face Frame Overlay Guide */
+.face-frame-guide {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 220px;
+    height: 260px;
+    border: 2px dashed rgba(255, 255, 255, 0.5);
+    border-radius: 50% 50% 45% 45% / 60% 60% 40% 40%;
+    box-shadow: 0 0 0 9999px rgba(15, 23, 42, 0.45);
+    pointer-events: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.face-frame-guide.status-recognized {
+    border-color: #22c55e;
+    border-style: solid;
+    border-width: 3px;
+    box-shadow: 0 0 0 9999px rgba(15, 23, 42, 0.3), 0 0 20px rgba(34, 197, 94, 0.6);
+}
+
+.face-frame-guide.status-low-confidence {
+    border-color: #eab308;
+    border-style: solid;
+    border-width: 2px;
+}
+
+/* Scanning Beam Animation */
+.scanner-beam {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #0b8043, #f59e0b, transparent);
+    box-shadow: 0 0 15px #0b8043;
+    animation: scanMove 2.5s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 5;
+}
+
+@keyframes scanMove {
+    0% { top: 15%; opacity: 0; }
+    30% { opacity: 1; }
+    70% { opacity: 1; }
+    100% { top: 85%; opacity: 0; }
+}
+
+/* Recognition Pulse */
+.pulse-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.pulse-indicator.active {
+    background-color: #22c55e;
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+    animation: pulse 1.5s infinite;
+}
+
+.pulse-indicator.searching {
+    background-color: #eab308;
+    box-shadow: 0 0 0 0 rgba(234, 179, 8, 0.7);
+    animation: pulse 1.5s infinite;
+}
+
+.pulse-indicator.idle {
+    background-color: #94a3b8;
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+
+/* Mobile friendly touches */
+@media (max-width: 576px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .scanner-viewport {
+        height: 320px;
+    }
+
+    .face-frame-guide {
+        width: 190px;
+        height: 230px;
+    }
+}
