@@ -1,5 +1,15 @@
 # FaceAbsen - Sistem Absensi Sekolah Berbasis AI Wajah & Asisten Cerdas Multi-Provider
-### SMK BINAWARGA LEMAHABANG
+---
+##Laporan PDF (AHMAD FIROSY FIJRI)
+
+https://drive.google.com/file/d/1ZXkCUYtBu9zuDzbYSli46N6AGjoEb78X/view?usp=sharing
+
+---
+## Identitas Pengembang
+Nama  : AHMAD FIROSY FIJRI
+KELAS : TI 2025 1D
+
+---
 
 Aplikasi web presensi sekolah modern yang dirancang untuk mendukung pencatatan kehadiran menggunakan kamera smartphone/laptop dengan integrasi model kecerdasan buatan Google Teachable Machine di **SMK BINAWARGA LEMAHABANG**. Dibangun menggunakan arsitektur MVC PHP Native berkinerja tinggi, aman, dan tanpa dependensi framework yang berlebihan, serta dilengkapi dengan microservice Asisten AI Chatbot dan WhatsApp Gateway.
 
